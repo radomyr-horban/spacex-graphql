@@ -1,43 +1,47 @@
-// import TourCard from './TourCard'
-import ToursWrapper from './ToursWrapper'
-// import arrowLeft from '../assets/buttons/arrow-left.png'
-// import arrowRight from '../assets/buttons/arrow-right.png'
 import { styled } from 'styled-components'
+
 import Button from './Button'
+import ToursWrapper from './ToursWrapper'
+
+import sliderDots from '../assets/img/slider-dots.png'
 
 const PopularToursContainer = styled.div`
+  margin: 100px auto;
+`
+const PopularToursHeader = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 `
-
-const CarouselControllers = styled.div`
-  /* margin: 10px; */
+const SliderDots = styled.img`
+  display: block;
+  margin: 0 auto;
 `
 
 const PopularTours = () => {
   return (
-    <>
-      <div>
-        <PopularToursContainer>
-          {/* carousel title */}
-          <h1>popular tours</h1>
-          {/* carousel controllers */}
-          <CarouselControllers>
-            <Button $primary>
-              {/* <img src={arrowLeft} alt='arrowLeft' /> */}
-              &lt;
-            </Button>
-            <Button $primary>
-              {/* <img src={arrowRight} alt='arrowRight' /> */}
-              &gt;
-            </Button>
-          </CarouselControllers>
-        </PopularToursContainer>
-      </div>
-      {/* pass an array of fetched caards and map through them */}
+    <PopularToursContainer>
+      <PopularToursHeader>
+        <h1>popular tours</h1>
+        <div>
+          <Button
+            $primary
+            $fontSize='30px'
+            $padding={'0 20px'}
+            $margin={'0 10px'}
+          >
+            &lt;
+          </Button>
+          <Button $primary $fontSize='30px' $padding={'0 20px'}>
+            &gt;
+          </Button>
+        </div>
+      </PopularToursHeader>
+
       <ToursWrapper />
-    </>
+
+      <SliderDots src={sliderDots} alt='slider dots' />
+    </PopularToursContainer>
   )
 }
 

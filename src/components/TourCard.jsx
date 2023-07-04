@@ -4,16 +4,13 @@ import favouriteIcon from '../assets/buttons/favourite-icon.svg'
 import Button from './Button'
 
 const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
+  max-width: 580px;
   border: 1px solid ${(props) => props.theme.button.secondary};
-  margin: 0 10px;
 `
 const CardImage = styled.img`
   width: 100%;
-  max-width: 300px;
-  height: auto;
+  /* max-width: 500px; */
+  /* height: auto; */
 `
 
 const CardInfo = styled.div`
@@ -21,7 +18,7 @@ const CardInfo = styled.div`
   flex-direction: column;
   align-items: center;
 
-  padding: 20px;
+  padding: 20px 0;
 `
 
 const CardTitle = styled.h3`
