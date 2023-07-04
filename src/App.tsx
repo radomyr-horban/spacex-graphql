@@ -1,5 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+// import {
+//   RecoilRoot,
+//   atom,
+//   selector,
+//   useRecoilState,
+//   useRecoilValue,
+// } from 'recoil'
+
 import { ThemeProvider } from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 
@@ -48,6 +56,7 @@ export const GlobalStyles = createGlobalStyle`
 
 function App() {
   return (
+    // <RecoilRoot>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <div className='App'>
@@ -59,6 +68,7 @@ function App() {
         </BrowserRouter>
       </div>
     </ThemeProvider>
+    // </RecoilRoot>
   )
 }
 

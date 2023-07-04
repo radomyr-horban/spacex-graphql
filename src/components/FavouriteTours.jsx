@@ -7,9 +7,6 @@ const FavouriteToursContainer = styled.div`
 `
 const FavouriteToursHeader = styled.div`
   text-align: right;
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: space-between; */
 `
 
 const FavouriteTours = () => {

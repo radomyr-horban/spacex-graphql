@@ -1,6 +1,9 @@
 import styled from 'styled-components'
+
 import randomPhoto from '../assets/img/satellite.png'
 import favouriteIcon from '../assets/buttons/favourite-icon.svg'
+// import deleteIcon from '../assets/buttons/delete-icon.svg'
+
 import Button from './Button'
 
 const CardContainer = styled.div`
@@ -50,6 +53,7 @@ const TourCard = () => {
         <ButtonWrapper>
           <Button>buy</Button>
           <img src={favouriteIcon} alt='favouriteIcon' />
+          {/* <img src={deleteIcon} alt='deleteIcon' /> */}
         </ButtonWrapper>
       </CardInfo>
     </CardContainer>

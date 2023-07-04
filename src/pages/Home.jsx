@@ -1,3 +1,5 @@
+import React, { useRef } from 'react'
+
 import styled from 'styled-components'
 
 import NavBar from '../components/NavBar'
@@ -12,6 +14,13 @@ const HomeContainer = styled.div`
 `
 
 const Home = () => {
+  // const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef(null)
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <HomeContainer>
       <NavBar />
@@ -19,9 +28,11 @@ const Home = () => {
         title='the space is waiting for you'
         scrollerText='Explore tours'
         img={bannerImage}
+        handleClick={handleClick}
       />
-      <PopularTours />
+      <PopularTours refScroll={ref} />
     </HomeContainer>
   )
 }
+
 export default Home

@@ -1,3 +1,5 @@
+// import React from 'react'
+
 import { styled } from 'styled-components'
 
 import Button from './Button'
@@ -18,11 +20,11 @@ const SliderDots = styled.img`
   margin: 0 auto;
 `
 
-const PopularTours = () => {
+const PopularTours = ({ refScroll }) => {
   return (
     <PopularToursContainer>
       <PopularToursHeader>
-        <h1>popular tours</h1>
+        <h1 ref={refScroll}>popular tours</h1>
         <div>
           <Button
             $primary

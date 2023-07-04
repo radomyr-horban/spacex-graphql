@@ -8,6 +8,7 @@ const BannerContainer = styled.div`
   justify-content: center;
   align-items: center;
 `
+
 const Image = styled.img`
   position: absolute;
   top: 0;
@@ -17,6 +18,7 @@ const Image = styled.img`
   object-fit: cover;
   z-index: -1;
 `
+
 const Title = styled.h1`
   font-size: 90px;
   color: #fff;
@@ -36,13 +38,14 @@ const ScrollerText = styled.a`
   }
 `
 
-const Banner = ({ title, scrollerText, img }) => {
+const Banner = ({ title, scrollerText, img, handleClick }) => {
   return (
     <BannerContainer>
-      {/* {NavBarComponent && <NavBarComponent />} */}
       <Image src={img} alt='Banner Image' />
       <Title>{title}</Title>
-      {scrollerText && <ScrollerText>{scrollerText} &darr;</ScrollerText>}
+      {scrollerText && (
+        <ScrollerText onClick={handleClick}>{scrollerText} &darr;</ScrollerText>
+      )}
     </BannerContainer>
   )
 }
