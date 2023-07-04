@@ -1,16 +1,16 @@
 import { styled } from 'styled-components'
 
-const Button = styled.button`
+interface ButtonProps {
+  $primary: boolean
+}
+
+const Button = styled.button<ButtonProps>`
   border: none;
-  background-color: #d3eaff; //! color should be a global variable
+  background-color: ${(props) =>
+    props.$primary ? props.theme.button.primary : props.theme.button.secondary};
   height: 53px;
   padding: 0 30px;
-
-  /* move to a global class */
   text-transform: uppercase;
-
-  /* body */
-  /* font-family: 'Syne', sans-serif; */
 
   &:hover {
     cursor: pointer;

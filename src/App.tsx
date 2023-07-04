@@ -23,12 +23,19 @@ const theme = {
   favouriteButton: {
     active: '#DD377D',
   },
-  fontFamily: 'Sego',
 }
 
 export const GlobalStyles = createGlobalStyle`
+  html{
+    margin: 0;
+
+  }
+
   body {
-    font-family: 'Sego', sans-serif;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Syne', 'sans-serif';
     color: #333;
     background-color: #fff;
 
@@ -37,7 +44,6 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center; */
   }
 
-  /* Add more global styles as needed */
 `
 
 function App() {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import randomPhoto from '../assets/img/satellite.png'
-import favouriteIcon from '../assets/favourite-icon.svg'
+import favouriteIcon from '../assets/buttons/favourite-icon.svg'
 import Button from './Button'
 
 const CardContainer = styled.div`
