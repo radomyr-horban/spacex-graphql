@@ -12,15 +12,19 @@ import {
   CardTitle,
 } from './TourCard.styles'
 
-const TourCard = () => {
+const TourCard = ({ rocket }) => {
   return (
     <CardContainer>
       <CardImage src={randomPhoto} alt='' />
 
       <CardInfo>
-        <CardTitle>Card title</CardTitle>
+        <CardTitle>
+          {/* Card title */}
+          {rocket.name}
+        </CardTitle>
         <CardDescription>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          {rocket.description}
+          {/* Lorem ipsum dolor sit, amet consectetur adipisicing elit. */}
         </CardDescription>
 
         <ButtonWrapper>

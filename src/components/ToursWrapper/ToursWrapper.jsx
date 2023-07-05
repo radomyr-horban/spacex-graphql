@@ -1,13 +1,14 @@
 import TourCard from '../TourCard/TourCard'
 import { CardsWrapper } from './ToursWrapper.styles'
 
-const ToursWrapper = () => {
+const ToursWrapper = ({ data }) => {
   return (
     <>
       <CardsWrapper>
-        <TourCard />
-        <TourCard />
-        <TourCard />
+        {data.rockets.map((rocket) => {
+          return <TourCard rocket={rocket} key={rocket.id} />
+        })}
+        {/* <TourCard /> */}
       </CardsWrapper>
     </>
   )

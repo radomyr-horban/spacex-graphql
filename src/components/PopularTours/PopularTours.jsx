@@ -7,7 +7,24 @@ import {
   SliderDots,
 } from './PopularTours.styles'
 
+import { useQuery, gql } from '@apollo/client'
+
+const GET_SPACEX_DATA = gql`
+  {
+    rockets {
+      id
+      description
+      name
+    }
+  }
+`
 const PopularTours = ({ refScroll }) => {
+  const { loading, error, data } = useQuery(GET_SPACEX_DATA)
+  console.log(data)
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error : {error.message}</p>
+
   return (
     <PopularToursContainer>
       <PopularToursHeader>
@@ -27,7 +44,7 @@ const PopularTours = ({ refScroll }) => {
         </div>
       </PopularToursHeader>
 
-      <ToursWrapper />
+      <ToursWrapper data={data} />
 
       <SliderDots src={sliderDots} alt='slider dots' />
     </PopularToursContainer>
