@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const BannerContainer = styled.div`
+export const BannerContainer = styled.div`
   position: relative;
   height: 100vh;
   display: flex;
@@ -9,7 +9,7 @@ const BannerContainer = styled.div`
   align-items: center;
 `
 
-const Image = styled.img`
+export const Image = styled.img`
   position: absolute;
   top: 0;
   left: 0;
@@ -19,14 +19,14 @@ const Image = styled.img`
   z-index: -1;
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
   font-size: 90px;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
 `
 
-const ScrollerText = styled.a`
+export const ScrollerText = styled.a`
   position: absolute;
   bottom: 20px;
   font-size: 24px;
@@ -37,17 +37,3 @@ const ScrollerText = styled.a`
     cursor: pointer;
   }
 `
-
-const Banner = ({ title, scrollerText, img, handleClick }) => {
-  return (
-    <BannerContainer>
-      <Image src={img} alt='Banner Image' />
-      <Title>{title}</Title>
-      {scrollerText && (
-        <ScrollerText onClick={handleClick}>{scrollerText} &darr;</ScrollerText>
-      )}
-    </BannerContainer>
-  )
-}
-
-export default Banner

@@ -1,24 +1,11 @@
-// import React from 'react'
-
-import { styled } from 'styled-components'
-
-import Button from './Button'
-import ToursWrapper from './ToursWrapper'
-
-import sliderDots from '../assets/img/slider-dots.png'
-
-const PopularToursContainer = styled.div`
-  margin: 100px auto;
-`
-const PopularToursHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-const SliderDots = styled.img`
-  display: block;
-  margin: 0 auto;
-`
+import Button from '../Button/Button'
+import ToursWrapper from '../ToursWrapper/ToursWrapper'
+import sliderDots from '../../assets/img/slider-dots.png'
+import {
+  PopularToursContainer,
+  PopularToursHeader,
+  SliderDots,
+} from './PopularTours.styles'
 
 const PopularTours = ({ refScroll }) => {
   return (

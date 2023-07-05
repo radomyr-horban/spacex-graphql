@@ -1,13 +1,5 @@
-import styled from 'styled-components'
-
-import TourCard from './TourCard'
-
-const CardsWrapper = styled.div`
-  display: flex;
-  margin: 30px 0;
-  justify-content: space-between;
-  width: 1800px;
-`
+import TourCard from '../TourCard/TourCard'
+import { CardsWrapper } from './ToursWrapper.styles'
 
 const ToursWrapper = () => {
   return (

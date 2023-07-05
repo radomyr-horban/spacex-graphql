@@ -1,8 +1,8 @@
 import { styled } from 'styled-components'
 
-import NavBar from '../components/NavBar'
-import Banner from '../components/Banner'
-import FavouriteTours from '../components/FavouriteTours'
+import NavBar from '../components/NavBar/NavBar'
+import Banner from '../components/Banner/Banner'
+import FavouriteTours from '../components/FavouriteTours/FavouriteTours'
 
 import favouritesBannerImage from '../assets/img/astronaut.png'
 

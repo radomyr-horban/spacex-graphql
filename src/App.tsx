@@ -14,6 +14,37 @@ import { createGlobalStyle } from 'styled-components'
 import Home from './pages/Home'
 import Favourites from './pages/Favourites'
 
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  gql,
+} from '@apollo/client'
+
+const client = new ApolloClient({
+  uri: 'https://spacex-production.up.railway.app/',
+  cache: new InMemoryCache(),
+})
+
+// const data = ...
+// id  - as unique identity
+// name  - card title
+// description  - card subtitle
+
+// client
+//   .query({
+//     query: gql`
+//       query ExampleQuery {
+//         rockets {
+//           id
+//           description
+//           name
+//         }
+//       }
+//     `,
+//   })
+//   .then((result) => console.log(result))
+
 const theme = {
   dark: {
     primary: '#000',
@@ -57,17 +88,19 @@ export const GlobalStyles = createGlobalStyle`
 function App() {
   return (
     // <RecoilRoot>
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <div className='App'>
-        <BrowserRouter>
-          <Routes>
-            <Route element={<Home />} path='/' />
-            <Route element={<Favourites />} path='/favourites' />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </ThemeProvider>
+    <ApolloProvider client={client}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <div className='App'>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<Home />} path='/' />
+              <Route element={<Favourites />} path='/favourites' />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </ThemeProvider>
+    </ApolloProvider>
     // </RecoilRoot>
   )
 }
