@@ -5,10 +5,16 @@ const ToursWrapper = ({ data }) => {
   return (
     <>
       <CardsWrapper>
-        {data.rockets.map((rocket, index) => {
-          return <TourCard rocket={rocket} key={rocket.id} index={index} />
+        {data.map((rocket, index) => {
+          return (
+            <TourCard
+              key={rocket.id}
+              rocket={rocket}
+              index={index}
+              // setFavouriteTours={setFavouriteTours}
+            />
+          )
         })}
-        {/* <TourCard /> */}
       </CardsWrapper>
     </>
   )

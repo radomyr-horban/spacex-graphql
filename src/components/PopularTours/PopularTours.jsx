@@ -1,3 +1,5 @@
+import { useQuery, gql } from '@apollo/client'
+
 import Button from '../Button/Button'
 import ToursWrapper from '../ToursWrapper/ToursWrapper'
 import sliderDots from '../../assets/img/slider-dots.png'
@@ -6,8 +8,6 @@ import {
   PopularToursHeader,
   SliderDots,
 } from './PopularTours.styles'
-
-import { useQuery, gql } from '@apollo/client'
 
 const GET_SPACEX_DATA = gql`
   {
@@ -44,7 +44,7 @@ const PopularTours = ({ refScroll }) => {
         </div>
       </PopularToursHeader>
 
-      <ToursWrapper data={data} />
+      <ToursWrapper data={data.rockets} />
 
       <SliderDots src={sliderDots} alt='slider dots' />
     </PopularToursContainer>
