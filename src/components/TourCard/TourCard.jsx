@@ -1,4 +1,7 @@
-import randomPhoto from '../../assets/img/satellite.png'
+import cardPhotoOne from '../../assets/img/satellite.png'
+import cardPhotoTwo from '../../assets/img/woman-in-space.png'
+import cardPhotoThree from '../../assets/img/astronaut.png'
+
 import favouriteIcon from '../../assets/buttons/favourite-icon.svg'
 // import deleteIcon from '../../assets/buttons/delete-icon.svg'
 
@@ -12,25 +15,22 @@ import {
   CardTitle,
 } from './TourCard.styles'
 
-const TourCard = ({ rocket }) => {
+const TourCard = ({ rocket, index }) => {
+  const photos = [cardPhotoOne, cardPhotoTwo, cardPhotoThree]
+  const currentPhotoSrc = photos[index % photos.length]
+
   return (
     <CardContainer>
-      <CardImage src={randomPhoto} alt='' />
+      <CardImage src={currentPhotoSrc} alt='' />
 
       <CardInfo>
-        <CardTitle>
-          {/* Card title */}
-          {rocket.name}
-        </CardTitle>
-        <CardDescription>
-          {rocket.description}
-          {/* Lorem ipsum dolor sit, amet consectetur adipisicing elit. */}
-        </CardDescription>
+        <CardTitle>{rocket.name}</CardTitle>
+        <CardDescription>{rocket.description}</CardDescription>
+        <div>index - {index}</div>
 
         <ButtonWrapper>
           <Button>buy</Button>
           <img src={favouriteIcon} alt='favouriteIcon' />
-          {/* <img src={deleteIcon} alt='deleteIcon' /> */}
         </ButtonWrapper>
       </CardInfo>
     </CardContainer>

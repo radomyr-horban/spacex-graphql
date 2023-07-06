@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-// import {
-//   RecoilRoot,
-//   atom,
-//   selector,
-//   useRecoilState,
-//   useRecoilValue,
-// } from 'recoil'
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil'
 
 import { ThemeProvider } from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
@@ -87,21 +87,21 @@ export const GlobalStyles = createGlobalStyle`
 
 function App() {
   return (
-    // <RecoilRoot>
-    <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <div className='App'>
-          <BrowserRouter>
-            <Routes>
-              <Route element={<Home />} path='/' />
-              <Route element={<Favourites />} path='/favourites' />
-            </Routes>
-          </BrowserRouter>
-        </div>
-      </ThemeProvider>
-    </ApolloProvider>
-    // </RecoilRoot>
+    <RecoilRoot>
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <div className='App'>
+            <BrowserRouter>
+              <Routes>
+                <Route element={<Home />} path='/' />
+                <Route element={<Favourites />} path='/favourites' />
+              </Routes>
+            </BrowserRouter>
+          </div>
+        </ThemeProvider>
+      </ApolloProvider>
+    </RecoilRoot>
   )
 }
 
