@@ -20,7 +20,7 @@ const FavouriteTours = () => {
       <FavouriteToursHeader>
         <h2 onClick={handleDeleteAll}>Clear all</h2>
       </FavouriteToursHeader>
-      <ToursWrapper data={favouriteTours} page='favourites' />
+      <ToursWrapper data={favouriteTours} />
     </FavouriteToursContainer>
   )
 }

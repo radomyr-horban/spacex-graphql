@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const BannerContainer = styled.div`
   position: relative;
-  height: 100vh;
+  height: ${(props) => (props.$isFavouritesPage ? '60vh' : '100vh')};
+
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -24,8 +24,6 @@ export const LogoImage = styled.img`
 
 export const LinkGroup = styled.nav`
   display: flex;
-  /* list-style-type: none; */
-  /* justify-content: center; */
 `
 export const ActionsGroup = styled.ul`
   display: flex;

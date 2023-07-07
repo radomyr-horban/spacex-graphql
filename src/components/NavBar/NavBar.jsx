@@ -1,5 +1,6 @@
 import logo from '../../assets/logo.png'
 import favouriteIcon from '../../assets/buttons/favourite-icon.svg'
+import favouriteIconActive from '../../assets/buttons/favourite-icon-active.svg'
 
 import Button from '../Button/Button'
 import {
@@ -13,7 +14,7 @@ import {
   NavList,
 } from './NavBar.styles'
 
-const NavBar = () => {
+const NavBar = ({ currentPage }) => {
   return (
     <NavBarContainer>
       <NavList>
@@ -41,12 +42,23 @@ const NavBar = () => {
         <ActionsGroup>
           <NavItem>
             <NavLink to='/favourites'>
-              <FavouriteIcon src={favouriteIcon} alt='favouriteIcon' />
+              <FavouriteIcon
+                src={
+                  currentPage === 'home' ? favouriteIcon : favouriteIconActive
+                }
+                alt='favouriteIcon'
+              />
             </NavLink>
           </NavItem>
           <NavItem>
             <NavLink to=''>
-              <Button>Sign In</Button>
+              <Button
+                $fontSize={'20px'}
+                $padding={'0 40px'}
+                $fontWeight={'bold'}
+              >
+                Sign In
+              </Button>
             </NavLink>
           </NavItem>
         </ActionsGroup>

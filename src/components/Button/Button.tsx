@@ -5,6 +5,7 @@ interface ButtonProps {
   $fontSize: string
   $padding?: string
   $margin?: string
+  $fontWeight?: string
 }
 
 const Button = styled.button<ButtonProps>`
@@ -15,6 +16,7 @@ const Button = styled.button<ButtonProps>`
 
   margin: ${(props) => props.$margin};
   padding: ${(props) => props.$padding};
+  font-weight: ${(props) => props.$fontWeight};
 
   height: 53px;
   border: none;

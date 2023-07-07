@@ -4,9 +4,12 @@ import { CardsWrapper } from './ToursWrapper.styles'
 import cardPhotoOne from '../../assets/img/satellite.png'
 import cardPhotoTwo from '../../assets/img/woman-in-space.png'
 import cardPhotoThree from '../../assets/img/astronaut.png'
+import { currentPageState } from '../../recoil/atoms'
+import { useRecoilValue } from 'recoil'
 
-const ToursWrapper = ({ data, page }) => {
+const ToursWrapper = ({ data }) => {
   const photos = [cardPhotoOne, cardPhotoTwo, cardPhotoThree]
+  const currentPage = useRecoilValue(currentPageState)
 
   return (
     <CardsWrapper>
@@ -14,11 +17,13 @@ const ToursWrapper = ({ data, page }) => {
         return (
           <TourCard
             key={rocket.id}
-            page={page}
             rocket={rocket}
             photoSrc={
-              page === 'home' ? photos[index % photos.length] : rocket.photoSrc
+              currentPage === 'home'
+                ? photos[index % photos.length]
+                : rocket.photoSrc
             }
+            currentPage={currentPage}
           />
         )
       })}

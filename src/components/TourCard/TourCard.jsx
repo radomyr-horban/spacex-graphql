@@ -15,7 +15,7 @@ import {
   CardTitle,
 } from './TourCard.styles'
 
-const TourCard = ({ rocket, photoSrc, page }) => {
+const TourCard = ({ rocket, photoSrc, currentPage }) => {
   const setFavouriteTours = useSetRecoilState(favouriteToursState)
 
   const handleAdd = (id) => {
@@ -41,19 +41,21 @@ const TourCard = ({ rocket, photoSrc, page }) => {
         <CardDescription>{rocket.description}</CardDescription>
         <ButtonWrapper>
           <Button>buy</Button>
-          {page === 'home' ? (
-            <img
-              src={favouriteIcon}
-              alt='favouriteIcon'
-              onClick={() => handleAdd(rocket.id)}
-            />
-          ) : (
-            <img
-              src={deleteIcon}
-              alt='deleteIcon'
-              onClick={() => handleDelete(rocket.id)}
-            />
-          )}
+          <Button $primary $padding={'0'}>
+            {currentPage === 'home' ? (
+              <img
+                src={favouriteIcon}
+                alt='favouriteIcon'
+                onClick={() => handleAdd(rocket.id)}
+              />
+            ) : (
+              <img
+                src={deleteIcon}
+                alt='deleteIcon'
+                onClick={() => handleDelete(rocket.id)}
+              />
+            )}
+          </Button>
         </ButtonWrapper>
       </CardInfo>
     </CardContainer>

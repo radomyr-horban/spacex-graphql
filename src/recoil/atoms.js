@@ -20,3 +20,8 @@ export const favouriteToursState = atom({
   default: [],
   effects: [localStorageEffect('favourite_tours')],
 })
+
+export const currentPageState = atom({
+  key: 'currentPageState',
+  default: 'home',
+})
