@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 
 import styled from 'styled-components'
 
@@ -14,7 +14,6 @@ const HomeContainer = styled.div`
 `
 
 const Home = () => {
-  // const ref = useRef<HTMLDivElement>(null)
   const ref = useRef(null)
 
   const handleClick = () => {

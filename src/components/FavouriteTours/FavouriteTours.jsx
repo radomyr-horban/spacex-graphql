@@ -1,4 +1,4 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 import { favouriteToursState } from '../../recoil/atoms'
 
 import ToursWrapper from '../ToursWrapper/ToursWrapper'
@@ -8,8 +8,6 @@ import {
 } from './FavouriteTours.styles'
 
 const FavouriteTours = () => {
-  // const favouriteTours = useRecoilValue(favouriteToursState)
-  // const setFavouriteTours = useSetRecoilState(favouriteToursState)
   const [favouriteTours, setFavouriteTours] =
     useRecoilState(favouriteToursState)
 
@@ -22,10 +20,7 @@ const FavouriteTours = () => {
       <FavouriteToursHeader>
         <h2 onClick={handleDeleteAll}>Clear all</h2>
       </FavouriteToursHeader>
-      <ToursWrapper
-        data={favouriteTours}
-        // setFavouriteTours={setFavouriteTours}
-      />
+      <ToursWrapper data={favouriteTours} page='favourites' />
     </FavouriteToursContainer>
   )
 }
