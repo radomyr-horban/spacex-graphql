@@ -1,7 +1,8 @@
-import { useSetRecoilState } from 'recoil'
-import { favouriteToursState } from '../../recoil/atoms'
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
+import { favouriteToursState, isIconActiveState } from '../../recoil/atoms'
 
 import favouriteIcon from '../../assets/buttons/favourite-icon.svg'
+import favouriteIconActive from '../../assets/buttons/favourite-icon-active.svg'
 import deleteIcon from '../../assets/buttons/delete-icon.svg'
 
 import Button from '../Button/Button'
@@ -15,21 +16,38 @@ import {
   CardTitle,
 } from './TourCard.styles'
 
+import { useEffect, useState } from 'react'
+
 const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
   const setFavouriteTours = useSetRecoilState(favouriteToursState)
+  const favouriteTours = useRecoilValue(favouriteToursState)
 
-  const handleAdd = (id) => {
+  // todo replace it with Recoil Atom
+  const [isIconActive, setIsIconActive] = useState(false)
+
+  useEffect(() => {
+    if (
+      rocket &&
+      rocket.id &&
+      favouriteTours.find((el) => el.id === rocket.id)
+    ) {
+      setIsIconActive(true)
+    }
+  }, [])
+
+  const handleAdd = () => {
     setFavouriteTours((data) => {
-      if (data.find((el) => el.id === id)) {
+      if (data.find((el) => el.id === rocket.id)) {
         return data
       }
       return [...data, { ...rocket, photoSrc }]
     })
+    setIsIconActive(true)
   }
 
-  const handleDelete = (id) => {
+  const handleDelete = () => {
     setFavouriteTours((data) => {
-      return data.filter((rocket) => rocket.id !== id)
+      return data.filter((el) => el.id !== rocket.id)
     })
   }
   if (blankCard) {
@@ -42,20 +60,18 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
         <CardTitle>{rocket.name}</CardTitle>
         <CardDescription>{rocket.description}</CardDescription>
         <ButtonWrapper>
-          <Button>buy</Button>
+          <Button $padding={'0 150px'} $fontWeight={'bold'} $fontSize={'20px'}>
+            buy
+          </Button>
           <Button $primary $padding={'0'}>
             {currentPage === 'home' ? (
               <img
-                src={favouriteIcon}
-                alt='favouriteIcon'
-                onClick={() => handleAdd(rocket.id)}
+                src={isIconActive ? favouriteIconActive : favouriteIcon}
+                alt={isIconActive ? 'favouriteIconActive' : 'favouriteIcon'}
+                onClick={handleAdd}
               />
             ) : (
-              <img
-                src={deleteIcon}
-                alt='deleteIcon'
-                onClick={() => handleDelete(rocket.id)}
-              />
+              <img src={deleteIcon} alt='deleteIcon' onClick={handleDelete} />
             )}
           </Button>
         </ButtonWrapper>

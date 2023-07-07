@@ -54,7 +54,7 @@ const NavBar = ({ currentPage }) => {
             <NavLink to=''>
               <Button
                 $fontSize={'20px'}
-                $padding={'0 40px'}
+                $padding={'0 50px'}
                 $fontWeight={'bold'}
               >
                 Sign In
