@@ -18,7 +18,9 @@ const FavouriteTours = () => {
   return (
     <FavouriteToursContainer>
       <FavouriteToursHeader>
-        <h2 onClick={handleDeleteAll}>Clear all</h2>
+        <h2 onClick={handleDeleteAll}>
+          {favouriteTours.length ? 'Clear all' : ''}
+        </h2>
       </FavouriteToursHeader>
       <ToursWrapper data={favouriteTours} />
     </FavouriteToursContainer>

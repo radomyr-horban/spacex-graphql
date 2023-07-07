@@ -15,7 +15,7 @@ import {
   CardTitle,
 } from './TourCard.styles'
 
-const TourCard = ({ rocket, photoSrc, currentPage }) => {
+const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
   const setFavouriteTours = useSetRecoilState(favouriteToursState)
 
   const handleAdd = (id) => {
@@ -32,7 +32,9 @@ const TourCard = ({ rocket, photoSrc, currentPage }) => {
       return data.filter((rocket) => rocket.id !== id)
     })
   }
-
+  if (blankCard) {
+    return <CardContainer></CardContainer>
+  }
   return (
     <CardContainer>
       <CardImage src={photoSrc} alt='' />

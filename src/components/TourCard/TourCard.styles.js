@@ -1,7 +1,11 @@
 import styled from 'styled-components'
 
 export const CardContainer = styled.div`
-  max-width: 580px;
+  /* min-width: ; */
+  min-height: 600px;
+  min-width: 500px;
+  /*  */
+  max-width: 500px;
   border: 1px solid ${(props) => props.theme.button.secondary};
 `
 export const CardImage = styled.img`
