@@ -1,28 +1,11 @@
 import Button from '../Button/Button'
 
-const CustomLeftArrow = ({ onClick }) => {
-  return <i className='custom-left-arrow' onClick={() => onClick()} />
-}
-const CustomRightArrow = ({ onClick }) => {
-  return <i className='custom-right-arrow' onClick={() => onClick()} />
-}
-
-const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }) => {
-  const { totalItems, currentSlide } = carouselState
-  return (
-    <div className='custom-button-group'>
-      {/* <div>Current slide is {currentSlide}</div>
-      <button onClick={() => previous()}>Previous slide</button>
-      <button onClick={() => next()}>Next slide</button> */}
-    </div>
-  )
-}
 const CustomButtonGroupAsArrows = ({ next, previous }) => {
   return (
     <div
       style={{
         position: 'relative',
-        bottom: '700px',
+        bottom: '720px',
         textAlign: 'right',
       }}
     >
@@ -42,9 +25,4 @@ const CustomButtonGroupAsArrows = ({ next, previous }) => {
   )
 }
 
-export {
-  CustomLeftArrow,
-  CustomRightArrow,
-  CustomButtonGroup,
-  CustomButtonGroupAsArrows,
-}
+export default CustomButtonGroupAsArrows

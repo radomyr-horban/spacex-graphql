@@ -17,9 +17,6 @@ const ToursWrapper = ({ data }) => {
   const blankCardsNumber = Math.max(3 - data.length, 0)
 
   if (currentPage === 'home') {
-    // console.log('currentPage', currentPage)
-    console.log('ToursWrapper', photos)
-
     return (
       //! Why Slider is not displayed with <CardsWrapper/>?
       // <CardsWrapper>

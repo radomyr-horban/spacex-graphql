@@ -1,17 +1,11 @@
 import { useQuery, gql } from '@apollo/client'
 
-import Button from '../Button/Button'
 import ToursWrapper from '../ToursWrapper/ToursWrapper'
-import sliderDots from '../../assets/img/slider-dots.png'
 
 import {
   PopularToursContainer,
   PopularToursHeader,
-  SliderDots,
 } from './PopularTours.styles'
-
-import Slider from '../Slider/Slider'
-import TourCard from '../TourCard/TourCard'
 
 const GET_SPACEX_DATA = gql`
   {
@@ -32,25 +26,8 @@ const PopularTours = ({ refScroll }) => {
     <PopularToursContainer>
       <PopularToursHeader>
         <h1 ref={refScroll}>popular tours</h1>
-        {/* <div>
-          <Button
-            $primary
-            $fontSize='30px'
-            $padding={'0 20px'}
-            $margin={'0 10px'}
-          >
-            &lt;
-          </Button>
-          <Button $primary $fontSize='30px' $padding={'0 20px'}>
-            &gt;
-          </Button>
-        </div> */}
       </PopularToursHeader>
-
       <ToursWrapper data={data.rockets} />
-      {/* <Slider data={data.rockets} /> */}
-
-      {/* <SliderDots src={sliderDots} alt='slider dots' /> */}
     </PopularToursContainer>
   )
 }

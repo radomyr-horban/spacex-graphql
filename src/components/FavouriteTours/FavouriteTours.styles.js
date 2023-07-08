@@ -6,3 +6,9 @@ export const FavouriteToursContainer = styled.div`
 export const FavouriteToursHeader = styled.div`
   text-align: right;
 `
+export const ClearAllTitle = styled.span`
+  font-size: 14pt;
+  &:hover {
+    cursor: pointer;
+  }
+`

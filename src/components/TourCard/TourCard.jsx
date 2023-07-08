@@ -55,7 +55,7 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
   }
   return (
     <CardContainer>
-      <CardImage />
+      <CardImage src={photoSrc} alt='' />
       <CardInfo>
         <CardTitle>{rocket.name}</CardTitle>
         <CardDescription>{rocket.description}</CardDescription>
@@ -77,24 +77,6 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
         </ButtonWrapper>
       </CardInfo>
     </CardContainer>
-
-    // return (
-    //   <CardContainer>
-    //     <CardInfo>
-    //       <CardTitle>rocket.name</CardTitle>
-    //       <CardDescription>rocket.description</CardDescription>
-    //       <ButtonWrapper>
-    //         <Button
-    //         //  $padding={'0 150px'} $fontWeight={'bold'} $fontSize={'20px'}
-    //         >
-    //           buy
-    //         </Button>
-    //         <Button $primary $padding={'0'}>
-    //           <img src={favouriteIcon} alt={'favouriteIcon'} />
-    //         </Button>
-    //       </ButtonWrapper>
-    //     </CardInfo>
-    // </CardContainer>
   )
 }
 

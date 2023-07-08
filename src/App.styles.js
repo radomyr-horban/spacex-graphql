@@ -32,10 +32,5 @@ export const GlobalStyles = createGlobalStyle`
       font-family: 'Syne', 'sans-serif';
       color: #333;
       background-color: #fff;
-  
-      /* center the page */
-      /* display: flex;
-      justify-content: center; */
     }
-  
   `

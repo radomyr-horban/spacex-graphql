@@ -1,7 +1,8 @@
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+
 import TourCard from '../TourCard/TourCard'
-import { CustomButtonGroupAsArrows } from './CustomArrows'
+import CustomButtonGroupAsArrows from './CustomArrows'
 
 const Slider = ({ data, photos, currentPage }) => {
   const responsive = {
@@ -21,8 +22,6 @@ const Slider = ({ data, photos, currentPage }) => {
       slidesToSlide: 1,
     },
   }
-
-  console.log('Slider', photos)
 
   return (
     <div

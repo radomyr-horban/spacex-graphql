@@ -3,6 +3,7 @@ import { favouriteToursState } from '../../recoil/atoms'
 
 import ToursWrapper from '../ToursWrapper/ToursWrapper'
 import {
+  ClearAllTitle,
   FavouriteToursContainer,
   FavouriteToursHeader,
 } from './FavouriteTours.styles'
@@ -18,9 +19,9 @@ const FavouriteTours = () => {
   return (
     <FavouriteToursContainer>
       <FavouriteToursHeader>
-        <h2 onClick={handleDeleteAll}>
+        <ClearAllTitle onClick={handleDeleteAll}>
           {favouriteTours.length ? 'Clear all' : ''}
-        </h2>
+        </ClearAllTitle>
       </FavouriteToursHeader>
       <ToursWrapper data={favouriteTours} />
     </FavouriteToursContainer>
