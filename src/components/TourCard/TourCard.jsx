@@ -1,5 +1,5 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { favouriteToursState, isIconActiveState } from '../../recoil/atoms'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { favouriteToursState } from '../../recoil/atoms'
 
 import favouriteIcon from '../../assets/buttons/favourite-icon.svg'
 import favouriteIconActive from '../../assets/buttons/favourite-icon-active.svg'
@@ -22,7 +22,7 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
   const setFavouriteTours = useSetRecoilState(favouriteToursState)
   const favouriteTours = useRecoilValue(favouriteToursState)
 
-  // todo replace it with Recoil Atom
+  // TODO: replace it with Recoil Atom
   const [isIconActive, setIsIconActive] = useState(false)
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
   }
   return (
     <CardContainer>
-      <CardImage src={photoSrc} alt='' />
+      <CardImage />
       <CardInfo>
         <CardTitle>{rocket.name}</CardTitle>
         <CardDescription>{rocket.description}</CardDescription>
@@ -77,6 +77,24 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
         </ButtonWrapper>
       </CardInfo>
     </CardContainer>
+
+    // return (
+    //   <CardContainer>
+    //     <CardInfo>
+    //       <CardTitle>rocket.name</CardTitle>
+    //       <CardDescription>rocket.description</CardDescription>
+    //       <ButtonWrapper>
+    //         <Button
+    //         //  $padding={'0 150px'} $fontWeight={'bold'} $fontSize={'20px'}
+    //         >
+    //           buy
+    //         </Button>
+    //         <Button $primary $padding={'0'}>
+    //           <img src={favouriteIcon} alt={'favouriteIcon'} />
+    //         </Button>
+    //       </ButtonWrapper>
+    //     </CardInfo>
+    // </CardContainer>
   )
 }
 

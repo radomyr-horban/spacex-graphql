@@ -1,7 +1,8 @@
 import { styled } from 'styled-components'
 
 export const PopularToursContainer = styled.div`
-  margin: 100px auto;
+  /* margin: 100px auto; */
+  margin: 100px;
 `
 export const PopularToursHeader = styled.div`
   display: flex;

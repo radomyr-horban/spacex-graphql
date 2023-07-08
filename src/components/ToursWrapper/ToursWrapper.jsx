@@ -8,23 +8,32 @@ import cardPhotoOne from '../../assets/img/satellite.png'
 import cardPhotoTwo from '../../assets/img/woman-in-space.png'
 import cardPhotoThree from '../../assets/img/astronaut.png'
 
+import Slider from '../Slider/Slider'
+
 const ToursWrapper = ({ data }) => {
   const photos = [cardPhotoOne, cardPhotoTwo, cardPhotoThree]
   const currentPage = useRecoilValue(currentPageState)
 
   const blankCardsNumber = Math.max(3 - data.length, 0)
 
+  if (currentPage === 'home') {
+    // console.log('currentPage', currentPage)
+    console.log('ToursWrapper', photos)
+
+    return (
+      //! Why Slider is not displayed with <CardsWrapper/>?
+      // <CardsWrapper>
+      <Slider data={data} photos={photos} currentPage={currentPage} />
+      // </CardsWrapper>
+    )
+  }
   return (
     <CardsWrapper>
-      {data.map((rocket, index) => (
+      {data.map((rocket) => (
         <TourCard
           key={rocket.id}
           rocket={rocket}
-          photoSrc={
-            currentPage === 'home'
-              ? photos[index % photos.length]
-              : rocket.photoSrc
-          }
+          photoSrc={rocket.photoSrc}
           currentPage={currentPage}
         />
       ))}

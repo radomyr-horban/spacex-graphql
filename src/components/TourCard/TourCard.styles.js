@@ -1,10 +1,8 @@
 import styled from 'styled-components'
 
 export const CardContainer = styled.div`
-  /* min-width: ; */
   min-height: 600px;
-  min-width: 500px;
-  /*  */
+  min-width: 400px;
   max-width: 500px;
   border: 1px solid ${(props) => props.theme.button.secondary};
 `

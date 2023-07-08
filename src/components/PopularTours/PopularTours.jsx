@@ -10,6 +10,9 @@ import {
   SliderDots,
 } from './PopularTours.styles'
 
+import Slider from '../Slider/Slider'
+import TourCard from '../TourCard/TourCard'
+
 const GET_SPACEX_DATA = gql`
   {
     rockets {
@@ -29,7 +32,7 @@ const PopularTours = ({ refScroll }) => {
     <PopularToursContainer>
       <PopularToursHeader>
         <h1 ref={refScroll}>popular tours</h1>
-        <div>
+        {/* <div>
           <Button
             $primary
             $fontSize='30px'
@@ -41,12 +44,13 @@ const PopularTours = ({ refScroll }) => {
           <Button $primary $fontSize='30px' $padding={'0 20px'}>
             &gt;
           </Button>
-        </div>
+        </div> */}
       </PopularToursHeader>
 
       <ToursWrapper data={data.rockets} />
+      {/* <Slider data={data.rockets} /> */}
 
-      <SliderDots src={sliderDots} alt='slider dots' />
+      {/* <SliderDots src={sliderDots} alt='slider dots' /> */}
     </PopularToursContainer>
   )
 }
