@@ -19,7 +19,10 @@ type NavBarProps = {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ currentPage }) => {
-  // const NavBar = ({ currentPage }) => {
+  // const handleClick = () => {
+
+  // }
+
   return (
     <NavBarContainer>
       <NavList>

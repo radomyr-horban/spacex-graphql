@@ -29,6 +29,10 @@ const StyledButton = styled.button<ButtonProps>`
     cursor: pointer;
     opacity: 0.7;
   }
+  &:active {
+    background-color: ${(props) => props.theme.colors.button.favourite};
+    color: ${(props) => props.theme.colors.button.primary};
+  }
 `
 
 export default StyledButton

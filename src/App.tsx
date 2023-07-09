@@ -13,7 +13,7 @@ export const theme = {
     button: {
       primary: '#ECECEC',
       secondary: '#D3EAFF',
-      // favourite: '#DD377D'
+      favourite: '#DD377D',
     },
     title: {
       primary: '#1E1E1E',
