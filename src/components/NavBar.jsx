@@ -14,6 +14,11 @@ import {
   NavList,
 } from './styles/NavBar.styled'
 
+// type NavBarProps = {
+//   currentPage: string
+// }
+
+// const NavBar = ({ currentPage }: NavBarProps) => {
 const NavBar = ({ currentPage }) => {
   return (
     <NavBarContainer>

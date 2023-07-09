@@ -1,8 +1,15 @@
 import styled from 'styled-components'
 
-export const StyledBannerContainer = styled.div`
+type StyledBannerContainerProps = {
+  isFavouritesPage: boolean
+}
+type ScrollerTextProps = {
+  onClick: Function
+}
+
+export const StyledBannerContainer = styled.div<StyledBannerContainerProps>`
+  height: ${(props) => (props.isFavouritesPage ? '60vh' : '100vh')};
   position: relative;
-  height: ${(props) => (props.$isFavouritesPage ? '60vh' : '100vh')};
 
   display: flex;
   flex-direction: column;
@@ -33,7 +40,7 @@ export const Title = styled.h1`
 //   text-transform: uppercase;
 // `
 
-export const ScrollerText = styled.a`
+export const ScrollerText = styled.a<ScrollerTextProps>`
   position: absolute;
   bottom: 20px;
   font-size: 24px;
