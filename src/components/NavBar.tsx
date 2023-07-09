@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 import favouriteIcon from '../assets/buttons/favourite-icon.svg'
 import favouriteIconActive from '../assets/buttons/favourite-icon-active.svg'
 
-import StyledButton from './Button'
+import StyledButton from './styles/Button.styled'
 import {
   ActionsGroup,
   LinkGroup,
@@ -14,12 +14,12 @@ import {
   NavList,
 } from './styles/NavBar.styled'
 
-// type NavBarProps = {
-//   currentPage: string
-// }
+type NavBarProps = {
+  currentPage: string
+}
 
-// const NavBar = ({ currentPage }: NavBarProps) => {
-const NavBar = ({ currentPage }) => {
+const NavBar: React.FC<NavBarProps> = ({ currentPage }) => {
+  // const NavBar = ({ currentPage }) => {
   return (
     <NavBarContainer>
       <NavList>
@@ -60,7 +60,7 @@ const NavBar = ({ currentPage }) => {
               <StyledButton
                 fontSize={'20px'}
                 padding={'0 50px'}
-                $fontWeight={'bold'}
+                fontWeight={'bold'}
               >
                 Sign In
               </StyledButton>

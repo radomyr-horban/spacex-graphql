@@ -14,7 +14,7 @@ const FavouritesContainer = styled.div`
   flex-direction: column;
 `
 
-const Favourites = () => {
+const Favourites: React.FC = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState)
 
   useEffect(() => {

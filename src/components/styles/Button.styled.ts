@@ -6,16 +6,14 @@ interface ButtonProps {
   padding?: string
   margin?: string
   fontWeight?: string
-  // !
   width?: string
 }
 
-export const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps>`
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => props.fontWeight};
   margin: ${(props) => props.margin};
   padding: ${(props) => props.padding};
-  //!
   width: ${(props) => props.width};
 
   background-color: ${(props) =>
@@ -32,3 +30,5 @@ export const StyledButton = styled.button<ButtonProps>`
     opacity: 0.7;
   }
 `
+
+export default StyledButton

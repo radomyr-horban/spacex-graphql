@@ -5,13 +5,12 @@ import favouriteIcon from '../assets/buttons/favourite-icon.svg'
 import favouriteIconActive from '../assets/buttons/favourite-icon-active.svg'
 import deleteIcon from '../assets/buttons/delete-icon.svg'
 
-import StyledButton from './Button'
+import StyledButton from './styles/Button.styled'
 
 import {
   ButtonWrapper,
   CardContainer,
   CardDescription,
-  CardImage,
   CardInfo,
   CardTitle,
 } from './styles/TourCard.styled'
@@ -50,12 +49,13 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
       return data.filter((el) => el.id !== rocket.id)
     })
   }
+
   if (blankCard) {
     return <CardContainer></CardContainer>
   }
+
   return (
     <CardContainer>
-      {/* <CardImage src={photoSrc} alt='' /> */}
       <img src={photoSrc} alt='' />
       <CardInfo>
         <CardTitle>{rocket.name}</CardTitle>

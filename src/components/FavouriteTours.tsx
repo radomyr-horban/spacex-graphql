@@ -8,11 +8,11 @@ import {
   FavouriteToursHeader,
 } from './styles/FavouriteTours.styled'
 
-const FavouriteTours = () => {
+const FavouriteTours: React.FC = () => {
   const [favouriteTours, setFavouriteTours] =
     useRecoilState(favouriteToursState)
 
-  const handleDeleteAll = () => {
+  const handleDeleteAll = (): void => {
     setFavouriteTours([])
   }
 

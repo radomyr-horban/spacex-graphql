@@ -17,9 +17,9 @@ const HomeContainer = styled.div`
   flex-direction: column;
 `
 
-const Home = () => {
+const Home: React.FC = () => {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState)
-  const ref = useRef(null)
+  const ref = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
     setCurrentPage('home')

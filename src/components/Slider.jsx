@@ -4,6 +4,16 @@ import 'react-multi-carousel/lib/styles.css'
 import TourCard from './TourCard'
 import CustomButtonGroupAsArrows from './CustomArrows'
 
+// type SliderProps = {
+//   data: Rocket[]
+//   photos: string[]
+//   currentPage: number
+// }
+
+// interface Rocket {
+//   id: string
+// }
+
 const Slider = ({ data, photos, currentPage }) => {
   const responsive = {
     desktop: {

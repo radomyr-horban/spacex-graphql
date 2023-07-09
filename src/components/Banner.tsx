@@ -6,10 +6,10 @@ import {
 } from './styles/Banner.styled'
 
 type BannerProps = {
-  title: string
-  scrollerText: string
+  title?: string
+  scrollerText?: string
   img: string
-  handleClick: Function
+  handleClick?: () => void | undefined // Update the type
   currentPage: string
 }
 
@@ -24,7 +24,7 @@ const Banner = ({
     <StyledBannerContainer isFavouritesPage={currentPage === 'favourites'}>
       <Image src={img} alt='Banner Image' />
       <Title>{title}</Title>
-      {scrollerText && (
+      {scrollerText && handleClick && (
         <ScrollerText onClick={handleClick}>{scrollerText} &darr;</ScrollerText>
       )}
     </StyledBannerContainer>

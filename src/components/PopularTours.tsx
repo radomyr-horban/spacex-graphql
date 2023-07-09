@@ -16,7 +16,12 @@ const GET_SPACEX_DATA = gql`
     }
   }
 `
-const PopularTours = ({ refScroll }) => {
+
+type PopularToursProps = {
+  refScroll: React.RefObject<HTMLHeadingElement>
+}
+
+const PopularTours: React.FC<PopularToursProps> = ({ refScroll }) => {
   const { loading, error, data } = useQuery(GET_SPACEX_DATA)
 
   if (loading) return <p>Loading...</p>
