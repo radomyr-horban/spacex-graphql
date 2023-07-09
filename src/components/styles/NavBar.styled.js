@@ -7,8 +7,14 @@ export const NavBarContainer = styled.div`
   z-index: 1;
 
   background-color: #1e1e1eb2; //! Use a global color
-  /* background-color: #1e1e1e;
-  opacity: 0.7; */
+  /* background-color: #1e1e1e; */
+  /* opacity: 0.7; */
+
+  /* @media (max-width: 1200px) {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+  }  */
 `
 
 export const NavList = styled.ul`
@@ -16,14 +22,21 @@ export const NavList = styled.ul`
   list-style-type: none;
   justify-content: space-around;
   align-items: center;
-`
 
-export const LogoImage = styled.img`
-  /* height: 40px; */
+  /* @media (max-width: 1200px) {
+    flex-direction: column;
+  } */
 `
 
 export const LinkGroup = styled.nav`
   display: flex;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    margin: 20px auto;
+  }
 `
 export const ActionsGroup = styled.ul`
   display: flex;
@@ -45,8 +58,4 @@ export const NavLink = styled(Link)`
     cursor: pointer;
     text-decoration: underline;
   }
-`
-
-export const FavouriteIcon = styled.img`
-  /* height: 20px; */
 `

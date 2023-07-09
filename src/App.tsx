@@ -6,7 +6,25 @@ import { RecoilRoot } from 'recoil'
 import Home from './pages/Home'
 import Favourites from './pages/Favourites'
 
-import { GlobalStyles, theme } from './App.styles'
+import GlobalStyles from './components/styles/Global'
+
+export const theme = {
+  colors: {
+    button: {
+      primary: '#ECECEC',
+      secondary: '#D3EAFF',
+      // favourite: '#DD377D'
+    },
+    title: {
+      primary: '#1E1E1E',
+      secondary: '#FFFFFF',
+    },
+    text: '#556B84',
+  },
+  // fontSizes: {
+  //   button: '24px',
+  // },
+}
 
 const client = new ApolloClient({
   uri: 'https://spacex-production.up.railway.app/',

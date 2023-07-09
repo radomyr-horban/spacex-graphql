@@ -1,11 +1,11 @@
 import { useQuery, gql } from '@apollo/client'
 
-import ToursWrapper from '../ToursWrapper/ToursWrapper'
+import ToursWrapper from './ToursWrapper'
 
 import {
   PopularToursContainer,
   PopularToursHeader,
-} from './PopularTours.styles'
+} from './styles/PopularTours.styled'
 
 const GET_SPACEX_DATA = gql`
   {
@@ -24,9 +24,7 @@ const PopularTours = ({ refScroll }) => {
 
   return (
     <PopularToursContainer>
-      <PopularToursHeader>
-        <h1 ref={refScroll}>popular tours</h1>
-      </PopularToursHeader>
+      <PopularToursHeader ref={refScroll}>popular tours</PopularToursHeader>
       <ToursWrapper data={data.rockets} />
     </PopularToursContainer>
   )

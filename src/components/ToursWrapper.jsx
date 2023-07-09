@@ -1,14 +1,14 @@
 import { useRecoilValue } from 'recoil'
-import { currentPageState } from '../../recoil/atoms'
+import { currentPageState } from '../recoil/atoms'
 
-import TourCard from '../TourCard/TourCard'
-import { CardsWrapper } from './ToursWrapper.styles'
+import TourCard from './TourCard'
+import { CardsWrapper } from './styles/ToursWrapper.styled'
 
-import cardPhotoOne from '../../assets/img/satellite.png'
-import cardPhotoTwo from '../../assets/img/woman-in-space.png'
-import cardPhotoThree from '../../assets/img/astronaut.png'
+import cardPhotoOne from '../assets/img/satellite.png'
+import cardPhotoTwo from '../assets/img/woman-in-space.png'
+import cardPhotoThree from '../assets/img/astronaut.png'
 
-import Slider from '../Slider/Slider'
+import Slider from './Slider'
 
 const ToursWrapper = ({ data }) => {
   const photos = [cardPhotoOne, cardPhotoTwo, cardPhotoThree]

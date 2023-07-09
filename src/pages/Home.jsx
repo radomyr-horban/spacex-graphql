@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 
 import styled from 'styled-components'
 
-import NavBar from '../components/NavBar/NavBar'
-import Banner from '../components/Banner/Banner'
-import PopularTours from '../components/PopularTours/PopularTours'
+import NavBar from '../components/NavBar'
+import Banner from '../components/Banner'
+import PopularTours from '../components/PopularTours'
 
 import bannerImage from '../assets/banner/banner-home.png'
 // import bannerImage from '../assets/banner/banner-with-dots.png'

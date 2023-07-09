@@ -1,12 +1,12 @@
 import { useRecoilState } from 'recoil'
-import { favouriteToursState } from '../../recoil/atoms'
+import { favouriteToursState } from '../recoil/atoms'
 
-import ToursWrapper from '../ToursWrapper/ToursWrapper'
+import ToursWrapper from './ToursWrapper'
 import {
   ClearAllTitle,
   FavouriteToursContainer,
   FavouriteToursHeader,
-} from './FavouriteTours.styles'
+} from './styles/FavouriteTours.styled'
 
 const FavouriteTours = () => {
   const [favouriteTours, setFavouriteTours] =

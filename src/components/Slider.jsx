@@ -1,7 +1,7 @@
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 
-import TourCard from '../TourCard/TourCard'
+import TourCard from './TourCard'
 import CustomButtonGroupAsArrows from './CustomArrows'
 
 const Slider = ({ data, photos, currentPage }) => {

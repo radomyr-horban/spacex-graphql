@@ -1,11 +1,11 @@
 import { useRecoilValue, useSetRecoilState } from 'recoil'
-import { favouriteToursState } from '../../recoil/atoms'
+import { favouriteToursState } from '../recoil/atoms'
 
-import favouriteIcon from '../../assets/buttons/favourite-icon.svg'
-import favouriteIconActive from '../../assets/buttons/favourite-icon-active.svg'
-import deleteIcon from '../../assets/buttons/delete-icon.svg'
+import favouriteIcon from '../assets/buttons/favourite-icon.svg'
+import favouriteIconActive from '../assets/buttons/favourite-icon-active.svg'
+import deleteIcon from '../assets/buttons/delete-icon.svg'
 
-import Button from '../Button/Button'
+import StyledButton from './Button'
 
 import {
   ButtonWrapper,
@@ -14,7 +14,7 @@ import {
   CardImage,
   CardInfo,
   CardTitle,
-} from './TourCard.styles'
+} from './styles/TourCard.styled'
 
 import { useEffect, useState } from 'react'
 
@@ -55,15 +55,22 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
   }
   return (
     <CardContainer>
-      <CardImage src={photoSrc} alt='' />
+      {/* <CardImage src={photoSrc} alt='' /> */}
+      <img src={photoSrc} alt='' />
       <CardInfo>
         <CardTitle>{rocket.name}</CardTitle>
         <CardDescription>{rocket.description}</CardDescription>
         <ButtonWrapper>
-          <Button $padding={'0 150px'} $fontWeight={'bold'} $fontSize={'20px'}>
+          <StyledButton
+            // padding={'0 150px'}
+            // padding={'0 10vw'}
+            width={'20vw'}
+            fontWeight={'bold'}
+            fontSize={'20px'}
+          >
             buy
-          </Button>
-          <Button $primary $padding={'0'}>
+          </StyledButton>
+          <StyledButton primary padding={'0'}>
             {currentPage === 'home' ? (
               <img
                 src={isIconActive ? favouriteIconActive : favouriteIcon}
@@ -73,7 +80,7 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
             ) : (
               <img src={deleteIcon} alt='deleteIcon' onClick={handleDelete} />
             )}
-          </Button>
+          </StyledButton>
         </ButtonWrapper>
       </CardInfo>
     </CardContainer>

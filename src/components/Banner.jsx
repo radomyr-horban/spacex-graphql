@@ -1,4 +1,9 @@
-import { BannerContainer, Image, ScrollerText, Title } from './Banner.styles'
+import {
+  StyledBannerContainer,
+  Image,
+  ScrollerText,
+  Title,
+} from './styles/Banner.styled'
 
 const Banner = ({
   title = '',
@@ -8,13 +13,13 @@ const Banner = ({
   currentPage,
 }) => {
   return (
-    <BannerContainer $isFavouritesPage={currentPage === 'favourites'}>
+    <StyledBannerContainer $isFavouritesPage={currentPage === 'favourites'}>
       <Image src={img} alt='Banner Image' />
       <Title>{title}</Title>
       {scrollerText && (
         <ScrollerText onClick={handleClick}>{scrollerText} &darr;</ScrollerText>
       )}
-    </BannerContainer>
+    </StyledBannerContainer>
   )
 }
 

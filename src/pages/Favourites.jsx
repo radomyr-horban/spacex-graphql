@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { styled } from 'styled-components'
 
-import NavBar from '../components/NavBar/NavBar'
-import Banner from '../components/Banner/Banner'
-import FavouriteTours from '../components/FavouriteTours/FavouriteTours'
+import NavBar from '../components/NavBar'
+import Banner from '../components/Banner'
+import FavouriteTours from '../components/FavouriteTours'
 
 import favouritesBannerImage from '../assets/banner/banner-favourites.png'
 import { useRecoilState } from 'recoil'

@@ -1,18 +1,18 @@
-import logo from '../../assets/logo.png'
-import favouriteIcon from '../../assets/buttons/favourite-icon.svg'
-import favouriteIconActive from '../../assets/buttons/favourite-icon-active.svg'
+import logo from '../assets/logo.png'
+// import logoSvg from '../assets/logo-svg.svg'
 
-import Button from '../Button/Button'
+import favouriteIcon from '../assets/buttons/favourite-icon.svg'
+import favouriteIconActive from '../assets/buttons/favourite-icon-active.svg'
+
+import StyledButton from './Button'
 import {
   ActionsGroup,
-  FavouriteIcon,
   LinkGroup,
-  LogoImage,
   NavBarContainer,
   NavItem,
   NavLink,
   NavList,
-} from './NavBar.styles'
+} from './styles/NavBar.styled'
 
 const NavBar = ({ currentPage }) => {
   return (
@@ -20,7 +20,7 @@ const NavBar = ({ currentPage }) => {
       <NavList>
         <NavItem>
           <NavLink to='/'>
-            <LogoImage src={logo} alt='logo' />
+            <img src={logo} alt='logo' />
           </NavLink>
         </NavItem>
 
@@ -42,7 +42,7 @@ const NavBar = ({ currentPage }) => {
         <ActionsGroup>
           <NavItem>
             <NavLink to='/favourites'>
-              <FavouriteIcon
+              <img
                 src={
                   currentPage === 'home' ? favouriteIcon : favouriteIconActive
                 }
@@ -52,13 +52,13 @@ const NavBar = ({ currentPage }) => {
           </NavItem>
           <NavItem>
             <NavLink to=''>
-              <Button
-                $fontSize={'20px'}
-                $padding={'0 50px'}
+              <StyledButton
+                fontSize={'20px'}
+                padding={'0 50px'}
                 $fontWeight={'bold'}
               >
                 Sign In
-              </Button>
+              </StyledButton>
             </NavLink>
           </NavItem>
         </ActionsGroup>
