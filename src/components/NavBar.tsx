@@ -64,6 +64,7 @@ const NavBar: React.FC<NavBarProps> = ({ currentPage }) => {
                 fontSize={'20px'}
                 padding={'0 50px'}
                 fontWeight={'bold'}
+                signIn
               >
                 Sign In
               </StyledButton>
