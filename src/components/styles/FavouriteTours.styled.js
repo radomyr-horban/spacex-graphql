@@ -5,10 +5,6 @@ export const FavouriteToursContainer = styled.div`
 `
 export const FavouriteToursHeader = styled.div`
   text-align: right;
-
-  /* @media (max-width: 1200px) {
-    text-align: center;
-  } */
 `
 export const ClearAllTitle = styled.span`
   font-size: 14pt;

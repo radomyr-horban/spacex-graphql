@@ -7,9 +7,4 @@ export const CardsWrapper = styled.div`
   margin: 30px 0;
   justify-content: space-between;
   width: 1800px;
-
-  /* @media (max-width: 1200px) {
-    width: 100%; 
-    justify-content: center; 
-  } */
 `

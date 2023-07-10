@@ -6,9 +6,7 @@ import NavBar from '../components/NavBar'
 import Banner from '../components/Banner'
 import PopularTours from '../components/PopularTours'
 
-import bannerImage from '../assets/banner/banner-home.png'
-// import bannerImage from '../assets/banner/banner-with-dots.png'
-// import bannerImage from '../assets/banner/banner-with-text.png'
+import bannerImage from '../assets/banner/banner-with-text.png'
 import { useRecoilState } from 'recoil'
 import { currentPageState } from '../recoil/atoms'
 

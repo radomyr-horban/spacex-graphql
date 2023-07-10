@@ -21,7 +21,6 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
   const setFavouriteTours = useSetRecoilState(favouriteToursState)
   const favouriteTours = useRecoilValue(favouriteToursState)
 
-  // TODO: replace it with Recoil Atom
   const [isIconActive, setIsIconActive] = useState(false)
 
   useEffect(() => {
@@ -61,13 +60,7 @@ const TourCard = ({ rocket, photoSrc, currentPage, blankCard }) => {
         <CardTitle>{rocket.name}</CardTitle>
         <CardDescription>{rocket.description}</CardDescription>
         <ButtonWrapper>
-          <StyledButton
-            // padding={'0 150px'}
-            // padding={'0 10vw'}
-            width={'20vw'}
-            fontWeight={'bold'}
-            fontSize={'20px'}
-          >
+          <StyledButton width={'20vw'} fontWeight={'bold'} fontSize={'20px'}>
             buy
           </StyledButton>
           <StyledButton primary padding={'0'}>

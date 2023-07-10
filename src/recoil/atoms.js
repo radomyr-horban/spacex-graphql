@@ -1,4 +1,4 @@
-import { atom, atomFamily } from 'recoil'
+import { atom } from 'recoil'
 
 const localStorageEffect =
   (key) =>
@@ -25,13 +25,3 @@ export const currentPageState = atom({
   key: 'currentPageState',
   default: 'home',
 })
-
-// export const isIconActiveState = atom({
-//   key: 'isIconActiveState',
-//   default: false,
-// })
-
-// export const isIconActiveState = atomFamily({
-//   key: 'isIconActiveState',
-//   default: false,
-// })
