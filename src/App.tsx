@@ -21,9 +21,6 @@ export const theme = {
     },
     text: '#556B84',
   },
-  // fontSizes: {
-  //   button: '24px',
-  // },
 }
 
 const client = new ApolloClient({

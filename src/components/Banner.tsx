@@ -9,7 +9,7 @@ type BannerProps = {
   title?: string
   scrollerText?: string
   img: string
-  handleClick?: () => void | undefined // Update the type
+  handleClick?: () => void | undefined
   currentPage: string
 }
 

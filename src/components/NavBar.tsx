@@ -1,5 +1,4 @@
 import logo from '../assets/logo.png'
-// import logoSvg from '../assets/logo-svg.svg'
 
 import favouriteIcon from '../assets/buttons/favourite-icon.svg'
 import favouriteIconActive from '../assets/buttons/favourite-icon-active.svg'
@@ -19,10 +18,6 @@ type NavBarProps = {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ currentPage }) => {
-  // const handleClick = () => {
-
-  // }
-
   return (
     <NavBarContainer>
       <NavList>
